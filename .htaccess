@@ -1,0 +1,19 @@
+# TONTINE HDJ — URLs propres
+RewriteEngine On
+
+# Si le dossier est /tontine-hdj, ajuster la RewriteBase si nécessaire :
+# RewriteBase /tontine-hdj/
+
+# Ne pas réécrire les fichiers / dossiers réels (assets, uploads, images...)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Tout le reste passe par index.php
+RewriteRule ^ index.php [L]
+
+# Sécurité : interdire l'accès direct aux dossiers sensibles
+RedirectMatch 403 ^.*/(config|core|models|controllers)/.*$
+
+# UTF-8
+AddDefaultCharset UTF-8

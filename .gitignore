@@ -1,0 +1,9 @@
+﻿# Base de données et fichiers envoyés par les utilisateurs
+uploads/*
+!uploads/.htaccess
+
+# Système / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+.env
